@@ -81,7 +81,7 @@
         <div class="relative" x-data="{ open: false }">
           <button @click="open = !open; $nextTick(() => { if(open){ $refs.userMenu.focus() } })" type="button" aria-haspopup="true" :aria-expanded="open ? 'true' : 'false'" class="transition-opacity duration-200 rounded-full dark:opacity-75 dark:hover:opacity-100 focus:outline-none focus:ring dark:focus:opacity-100">
             <span class="sr-only">User menu</span>
-            <img class="w-10 h-10 rounded-full" src="{{ asset('images/admin-avatar.jpg') }}" alt="Ahmed Kamel" />
+            <img class="w-10 h-10 rounded-full" src="{{ asset('images/admin-avatar.jpg') }}" alt="" />
           </button>
 
           <!-- User dropdown menu -->
@@ -148,7 +148,7 @@
         <div class="relative ml-auto" x-data="{ open: false }">
           <button @click="open = !open" type="button" aria-haspopup="true" :aria-expanded="open ? 'true' : 'false'" class="block transition-opacity duration-200 rounded-full dark:opacity-75 dark:hover:opacity-100 focus:outline-none focus:ring dark:focus:opacity-100">
             <span class="sr-only">User menu</span>
-            <img class="w-10 h-10 rounded-full" src="{{ asset('images/admin-avatar.jpg') }}" alt="Ahmed Kamel" />
+            <img class="w-10 h-10 rounded-full" src="{{ asset('images/admin-avatar.jpg') }}" alt="" />
           </button>
 
           <!-- User dropdown menu -->

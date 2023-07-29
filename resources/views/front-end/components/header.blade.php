@@ -109,23 +109,27 @@
     @auth
         <div class="hidden lg:block my-auto w-3/12 pr-16 font-medium dropdown relative">
             <div class="flex justify-end ">
-                <div class="flex items-center">
-                    <img class="inline object-cover w-10 h-10 ring-2 mr-2 rounded-full" src="https://images.pexels.com/photos/2589653/pexels-photo-2589653.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Profile image"/>
+                <div class="flex justify-center items-center">
+
+                    <div class="flex relative w-12 h-12 justify-center items-center m-1 mr-2 text-xl rounded-full ">
+                        <img class="rounded-full" alt="A" src="{{ asset('images/customer-avatar.jpg') }}">
+                        <div class="rounded-full w-4 h-4 absolute bottom-0 right-0">
+                            @if(Auth::user()-> verify == 0)
+                            {{-- <svg xmlns="http://www.w3.org/2000/svg" id="verify" class="h-6 w-6" fill="red" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg> --}}
+                                <img class="w-full h-full object-contain" src="{{ asset('images/common/cancel.png') }}" alt="" />
+                            @else
+                                {{-- <svg xmlns="http://www.w3.org/2000/svg" id="verify" class="h-6 w-6" fill="green" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg> --}}
+                                <img class="w-full h-full object-contain" src="{{ asset('images/common/check.png') }}" alt="" />
+                            @endif
+                        </div>
+                    </div>
                     <a href="{{ route('account.index') }}">
                         {{ Auth::user()->full_name }}
                     </a>
-                    <!-- verify -->
-                    <div class="ml-1">
-                        @if(Auth::user()-> verify == 0)
-                            <svg xmlns="http://www.w3.org/2000/svg" id="verify" class="h-6 w-6" fill="red" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        @else
-                            <svg xmlns="http://www.w3.org/2000/svg" id="verify" class="h-6 w-6" fill="green" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        @endif
-                    </div>
                 </div>
                 {{-- <a href="{{ route('client.login.index') }}"><div class=" mt-1 text-right pr-4 hover:text-orange-600">Đăng nhập</div></a> --}}
             </div>
