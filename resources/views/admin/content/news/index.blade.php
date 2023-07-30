@@ -1,7 +1,7 @@
 @extends('admin.app')
 
 @section('title')
-<title>News</title>
+<title>Quản lý tin đăng</title>
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@
     @include('admin.components.header')
     <main>
         <div class="flex items-center justify-between px-4 py-4 border-b lg:py-6 dark:border-primary-darker">
-            <h1 class="text-2xl font-semibold">News</h1>
+            <h1 class="text-2xl font-semibold">Danh sách bài viết</h1>
         </div>
         <!-- Content -->
         <div class=" h-screen">

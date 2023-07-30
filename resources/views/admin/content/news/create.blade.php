@@ -1,7 +1,7 @@
 @extends('admin.app')
 
 @section('title')
-<title>News</title>
+<title>Thêm mới bài viết</title>
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@
     @include('admin.components.header')
     <main>
         <div class="flex items-center justify-between px-4 py-4 border-b lg:py-6 dark:border-primary-darker">
-            <h1 class="text-2xl font-semibold">News</h1>
+            <h1 class="text-2xl font-semibold">Quản lý tin đăng | Thêm mới</h1>
         </div>
         <!-- Content -->
         <form class="rounded px-8 pt-6 pb-8 mb-4 flex justify-between" method="POST"

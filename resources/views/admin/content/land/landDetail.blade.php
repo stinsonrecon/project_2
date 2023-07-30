@@ -130,8 +130,7 @@
                     @if($land->linkImg != null)
                         <div class="dark:text-primary-darker text-xl font-bold">
                             @if (sizeof($land->linkImg) > 1)
-                                <div class="product-slider relative flex flex-wrap justify-around w-full"
-                                    id="productList">
+                                <div class="splide relative flex flex-wrap justify-around w-full">
                                     <div class="splide__arrows hidden lg:block">
                                         <button
                                             class="splide__arrow splide__arrow--prev text-xl hover:bg-primary-dark text-black dark:text-primary-dark hover:text-white">
@@ -157,18 +156,6 @@
                             @endif
                         </div>
                     @endif
-                    <script>
-                        document.addEventListener('DOMContentLoaded', function () {
-                            if (document.getElementsByClassName('product-slider')[0]) {
-                                new Splide('.product-slider', {
-                                    perPage: 3,
-                                    type: 'loop',
-                                    autoplay: true,
-                                    pauseOnHover: false,
-                                }).mount();
-                            }
-                        });
-                    </script>
                 </div>
             </div>
         </div>

@@ -18,10 +18,10 @@ class HomeController extends Controller
     public $new;
     public function __construct(News $news)
     {
-        $this->news=$news;
+        $this->new=$news;
     }
     public function index(){
-        $news = News::where('status', '=', 2)
+        $news = $this->new->where('status', '=', 2)
                     ->orderBy('id_type', 'desc')
                     ->orderBy('startTime', 'desc')->limit(12)->get();
 
@@ -39,7 +39,6 @@ class HomeController extends Controller
         $cities = City::orderBy('name')->get();
         $home = News::whereNotNull('id_nha') -> where('status', '=', 2)->where('loai_hinhthuc_id', '=', $id)->orderBy('id_type', 'desc')
         ->orderBy('startTime', 'desc')->paginate(10);
-        //dd($home);
         return view('front-end.contents.estate.homeList', ['cities' => $cities, 'home' => $home]);
     }
     public function landList($id){

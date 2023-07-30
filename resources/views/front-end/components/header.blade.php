@@ -115,14 +115,8 @@
                         <img class="rounded-full" alt="A" src="{{ asset('images/customer-avatar.jpg') }}">
                         <div class="rounded-full w-4 h-4 absolute bottom-0 right-0">
                             @if(Auth::user()-> verify == 0)
-                            {{-- <svg xmlns="http://www.w3.org/2000/svg" id="verify" class="h-6 w-6" fill="red" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg> --}}
                                 <img class="w-full h-full object-contain" src="{{ asset('images/common/cancel.png') }}" alt="" />
                             @else
-                                {{-- <svg xmlns="http://www.w3.org/2000/svg" id="verify" class="h-6 w-6" fill="green" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg> --}}
                                 <img class="w-full h-full object-contain" src="{{ asset('images/common/check.png') }}" alt="" />
                             @endif
                         </div>

@@ -1,5 +1,5 @@
-<div class="estate-slider mt-6 xl:mt-10 w-full flex-col sm:flex sm:flex-row propDisplay justify-between items-center relative"
-    id="estate-slider">
+<div class="splide mt-6 xl:mt-10 w-full flex-col sm:flex sm:flex-row propDisplay justify-between items-center relative"
+    data-splide='{"type":"loop","perPage":3, "autoplay"; true, "pauseOnHover": false}'>
     <div class="splide__arrows hidden lg:block">
         <button
             class="splide__arrow splide__arrow--prev text-2xl text-black hover:text-orange-600 hover:bg-orange-600">
@@ -105,17 +105,4 @@
             @endforeach
         </ul>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            if (document.getElementById('estate-slider')) {
-                new Splide('#estate-slider', {
-                    perPage: 4,
-                    type: 'loop',
-                    autoplay: true,
-                    pauseOnHover: false,
-                }).mount();
-            }
-        });
-    </script>
 </div>

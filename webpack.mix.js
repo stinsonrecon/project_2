@@ -14,5 +14,7 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         require("tailwindcss"),
-    ]);
+    ])
+    .js('resources/js/product-slider.js', 'public/js')
+    .copy('node_modules/@splidejs/splide/dist/css/splide.min.css', 'public/css');
 mix.browserSync('127.0.0.1:8000');

@@ -1,29 +1,24 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Events\ClientPostNews;
-use App\Events\ClientRegister;
 use App\Models\News;
 use Illuminate\Http\Request;
-use PhpParser\Node\Expr\FuncCall;
-use Psy\CodeCleaner\FunctionContextPass;
-use Illuminate\Support\Str;
-
-use Illuminate\Support\Facades\Storage;
 
 
 class TestSubmit extends Controller
 {
     public function index(){
-        // $land = News::whereNotNull('id_dat')->get();
-        $land = News::whereNotNull('id_dat')->where('status', '=', 2)->where('loai_hinhthuc_id', '=', 5)
-        ->orWhere('loai_hinhthuc_id', '=', 6)->orderBy('id_type', 'desc')
-        ->orderBy('startTime', 'desc')->get();
+        // $slidesData = News::find(66);
 
-        dd($land);
+        // dd($slidesData);
+        $slidesData = [
+            ['title' => 'Slide 1', 'description' => 'Description for Slide 1'],
+            ['title' => 'Slide 2', 'description' => 'Description for Slide 2'],
+            ['title' => 'Slide 3', 'description' => 'Description for Slide 3'],
+            // Add more slide data as needed
+        ];
 
-        return view('submitForm');
+        return view('submitForm', ['slidesData' => $slidesData]);
     }
 
     public function submit(Request $request){

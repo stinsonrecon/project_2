@@ -1,7 +1,7 @@
 @extends('admin.app')
 
 @section('title')
-<title>News</title>
+<title>Chi tiết bài viết</title>
 @endsection
 
 @section('content')
@@ -413,8 +413,7 @@
                         @if ($new->house->linkImg != null)
                             <div class="dark:text-primary-darker text-xl font-bold">
                                 @if (sizeof($new->house->linkImg) > 1)
-                                    <div class="product-slider relative flex flex-wrap justify-around w-full"
-                                        id="productList">
+                                    <div class="splide relative flex flex-wrap justify-around w-full">
                                         <div class="splide__arrows hidden lg:block">
                                             <button
                                                 class="splide__arrow splide__arrow--prev text-xl hover:bg-primary-dark text-black dark:text-primary-dark hover:text-white">
@@ -446,8 +445,7 @@
                         @if($new->land->linkImg != null)
                             <div class="dark:text-primary-darker text-xl font-bold">
                                 @if (sizeof($new->land->linkImg) > 1)
-                                    <div class="product-slider relative flex flex-wrap justify-around w-full"
-                                        id="productList">
+                                    <div class="splide relative flex flex-wrap justify-around w-full">
                                         <div class="splide__arrows hidden lg:block">
                                             <button
                                                 class="splide__arrow splide__arrow--prev text-xl hover:bg-primary-dark text-black dark:text-primary-dark hover:text-white">
@@ -474,18 +472,6 @@
                             </div>
                         @endif
                     @endif
-                    <script>
-                        document.addEventListener('DOMContentLoaded', function () {
-                            if (document.getElementsByClassName('product-slider')[0]) {
-                                new Splide('.product-slider', {
-                                    perPage: 3,
-                                    type: 'loop',
-                                    autoplay: true,
-                                    pauseOnHover: false,
-                                }).mount();
-                            }
-                        });
-                    </script>
                 </div>
             </div>
 
@@ -521,7 +507,7 @@
                         </div>
                     </div>
 
-                    <button class="ml-4 border-2 font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline dark:hover:bg-primary-darker hover:bg-gray-300" type="submit">
+                    <button class="ml-4 btn focus:outline-none focus:shadow-outline" type="submit">
                         Cập nhật
                     </button>
                 </form>

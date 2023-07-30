@@ -16,7 +16,7 @@
                 <!-- noi dung -->
                 @foreach ($home as $home)
                     <div class="w-full myBox m-auto border border-gray-400 mt-7 flex-col xl:flex-row xl:flex justify-between mb-10 shadow">
-                        <a href="/house-detail/{{ $home -> id}}" 
+                        <a href="/house-detail/{{ $home -> id}}"
                         class="flex">
                             <div>
                                 <img src="{{ asset('images/front-end/home-list/House.png') }}" alt="" class="w-full"/>
@@ -50,11 +50,8 @@
                                     <p class="text-gray-600">Chung cư: Giá {{ $home->gia }} tỷ</p>
                                 </div>
                                 <p class="mt-3">
-                                    {{ $home->mo_ta }}
+                                    {!! $home->house->mo_ta !!}
                                 </p>
-                                    <p class="mt-3">
-                                        {{ $home->house->mo_ta }}
-                                    </p>
                             </div>
                         </a>
                     </div>
