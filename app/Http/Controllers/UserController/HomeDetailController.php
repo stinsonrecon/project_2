@@ -20,7 +20,7 @@ class HomeDetailController extends Controller
 
         $news = News::where('status', '=', 2)
                     ->orderBy('id_type', 'desc')
-                    ->orderBy('startTime', 'desc')->limit(12)->get();
+                    ->orderBy('startTime', 'desc')->limit(3)->get();
 
         return view('front-end.contents.estate.nha-detail',['cities' => $cities, 'new' => $new, 'news' => $news]);
     }

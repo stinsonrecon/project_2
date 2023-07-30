@@ -14,7 +14,7 @@
                 </div>
             <div class="mt-3">
                 <input class="placeholder:text-sm rounded w-5/6 h-8 text-black px-5"
-                        type="text" name="password" id="password" placeholder="Mật khẩu">
+                        type="password" name="password" id="password" placeholder="Mật khẩu">
             </div>
             <div class="mt-5">
                 <input type="submit" class="m-auto w-5/6 py-1 px-2 bg-orange-600 rounded-md text-center
