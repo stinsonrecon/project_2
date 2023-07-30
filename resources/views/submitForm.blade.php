@@ -32,67 +32,106 @@
 
 </head>
 <body>
-    {{-- @foreach($slidesData->land->linkImg as $img)
-        <li class="text-center splide__slide px-3">
-            <img class="" src="{{ asset('storage/estate_images') . '/' . $slidesData->idBanking . '/' . $img }}" alt="">
-        </li>
-    @endforeach --}}
-    <div class=" flex-col">
-        <div class="flex justify-center items-center bg-blue-400">
-            <div class="splide w-3/4 max-w-screen-lg relative overflow-hidden" id="product-slider" data-splide='{"type":"loop","perPage":1}'>
-                <!-- Ensure the correct class names for arrows -->
-                <div class="splide__arrows hidden lg:block">
-                    <button
-                        class="splide__arrow splide__arrow--prev text-xl hover:bg-primary-dark text-black dark:text-primary-dark hover:text-white">
-                        <i class="fas fa-caret-left"></i>
-                    </button>
-                    <button
-                        class="splide__arrow splide__arrow--next text-xl hover:bg-primary-dark text-black dark:text-primary-dark hover:text-white">
-                        <i class="fas fa-caret-right"></i>
-                    </button>
-                </div>
-                <!-- Ensure the correct class names for track and list -->
-                <div class="splide__track">
-                    <ul class="splide__list">
-                        @foreach($slidesData as $slide)
-                            <li class="text-center splide__slide px-3">
-                                <h3>{{ $slide['title'] }}</h3>
-                                <p>{{ $slide['description'] }}</p>
-                            </li>
-                        @endforeach
-                    </ul>
+    <div class="flex-col xl:flex xl:flex-row mt-20 justify-between py-10" style="background-color: #E9E9E9;">
+        {{-- Left side bar --}}
+        <div class="w-1/6"></div>
+        {{-- Bank list center --}}
+        <div class="w-11/12 m-auto xl:w-1/2">
+            <div class="rounded bg-white shadow-md  flex-col pb-10 pt-6 px-4 xl:px-10 text-center">
+                <div class="text-2xl font-bold" style="color: #EF562D">Thanh toán</div>
+                <div class="mt-4 font-bold text-left">Khách hàng chuyển khoản vào các tài khoản sau để thanh toán</div>
+                <form class="flex-col xl:flex xl:flex-row flex-wrap justify-between mt-10">
+                    @foreach ($bankAccounts as $bankAccount)
+                        <input class="hidden" id="radio_{{ $bankAccount['id'] }}" type="radio" name="radio" onclick="displayBank({{ $bankAccount['id'] }})">
+                        <label class="flex cursor-pointer flex-col bankBox mb-6 py-10 px-6 xl:px-10 rounded shadow-md" for="radio_{{ $bankAccount['id'] }}">
+                            <div>
+                                <img src="{{ asset('images/front-end/banks/' . strtolower($bankAccount['bankName']) . '.png') }}" alt="">
+                            </div>
+                            <div class="mt-4 text-left font-medium">STK: <span id="stk_{{ $bankAccount['id'] }}">{{ $bankAccount['bankNumber'] }}</span></div>
+                            <div class="hidden" id="bankName_{{ $bankAccount['id'] }}">{{ $bankAccount['bankName'] }}</div>
+                            <div class="text-left font-medium">Chủ tài khoản: {{ $bankAccount['userName'] }}</div>
+                        </label>
+                    @endforeach
+                </form>
+                <div class=" border-t-2 border-b-2 border-orange-600 py-3 text-left text-lg">
+                    <span class=" font-semibold">Chuyển khoản với nội dung:</span>
+                    <span class="font-semibold" style="color: #EF562D">
+                        {{-- {{ $idBanking }} --}}
+                        TN12345
+                    </span> vào số tài khoản
+                    <span class="font-semibold" id="stk_bill"></span> ngân hàng <span class="font-semibold" id="bankName_bill"></span>.
+                    <div>Tin của quý khách hàng sẽ được cập nhật sớm nhất có thể</div>
                 </div>
             </div>
+            {{-- <form action="{{ route('client.news.store') }}" method="POST" class="pt-5">
+                @csrf
+                <button class="border rounded-xl text-white w-full py-2 text-xl font-semibold hover:bg-white" style="border-color: #EF562D; background: #EF562D;" type="submit">
+                    Đăng tin
+                </button>
+            </form> --}}
         </div>
 
-        <div class="flex justify-center items-center bg-red-500">
-            <div class="splide w-3/4 max-w-screen-lg relative overflow-hidden" id="product-slider" data-splide='{"type":"loop","perPage":3}'>
-                <!-- Ensure the correct class names for arrows -->
-                <div class="splide__arrows hidden lg:block">
-                    <button
-                        class="splide__arrow splide__arrow--prev text-xl hover:bg-primary-dark text-black dark:text-primary-dark hover:text-white">
-                        <i class="fas fa-caret-left"></i>
-                    </button>
-                    <button
-                        class="splide__arrow splide__arrow--next text-xl hover:bg-primary-dark text-black dark:text-primary-dark hover:text-white">
-                        <i class="fas fa-caret-right"></i>
-                    </button>
-                </div>
-                <!-- Ensure the correct class names for track and list -->
-                <div class="splide__track">
-                    <ul class="splide__list">
-                        @foreach($slidesData as $slide)
-                            <li class="text-center splide__slide px-3">
-                                <h3>{{ $slide['title'] }}</h3>
-                                <p>{{ $slide['description'] }}</p>
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
-        </div>
+        {{-- right side bar --}}
+        {{-- <div class="w-1/6 border rounded-xl bg-white p-7" style="height: 540px">
+            @include('front-end.components.newsFormBill')
+        </div> --}}
+
+        <script>
+            var bankAccounts = @json($bankAccounts);
+
+            function displayBank(bankId) {
+                var stk_bill = document.getElementById('stk_bill');
+                var bankNameBill = document.getElementById('bankName_bill');
+
+                var bankAccount = bankAccounts.find(function(account) {
+                    return account.id === bankId;
+                });
+
+                stk_bill.innerHTML = bankAccount.bankNumber;
+                bankNameBill.innerHTML = bankAccount.bankName;
+            }
+            // Set the first radio button as checked on page load
+            document.getElementById("radio_{{ $bankAccounts[0]['id'] }}").checked = true;
+            // Initialize the display with the first bank account
+            displayBank({{ $bankAccounts[0]['id'] }});
+        </script>
     </div>
 
+    {{-- @foreach ($bankAccounts as $bankAccount)
+        <input class="hidden" id="radio_{{ $bankAccount['id'] }}" type="radio" name="radio" onclick="displayBank({{ $bankAccount['id'] }})">
+        <label class="flex cursor-pointer flex-col bankBox mb-6 py-10 px-6 xl:px-10 rounded shadow-md" for="radio_{{ $bankAccount['id'] }}">
+            <div>
+                <img src="{{ asset('images/front-end/banks/' . strtolower($bankAccount['bankName']) . '.png') }}" alt="">
+            </div>
+            <div class="mt-4 text-left font-medium">STK: <span id="stk_{{ $bankAccount['id'] }}">{{ $bankAccount['bankNumber'] }}</span></div>
+            <div class="hidden" id="bankName_{{ $bankAccount['id'] }}">{{ $bankAccount['bankName'] }}</div>
+            <div class="text-left font-medium">Chủ tài khoản: {{ $bankAccount['userName'] }}</div>
+        </label>
+    @endforeach
 
+    <!-- Add a div to display the selected bank account -->
+    <div id="stk_bill"></div>
+    <div id="bankName_bill"></div>
+
+    <!-- JavaScript function -->
+    <script>
+        var bankAccounts = @json($bankAccounts);
+
+        function displayBank(bankId) {
+            var stk_bill = document.getElementById('stk_bill');
+            var bankNameBill = document.getElementById('bankName_bill');
+
+            var bankAccount = bankAccounts.find(function(account) {
+                return account.id === bankId;
+            });
+
+            stk_bill.innerHTML = bankAccount.bankNumber;
+            bankNameBill.innerHTML = bankAccount.bankName;
+        }
+        // Set the first radio button as checked on page load
+        document.getElementById("radio_{{ $bankAccounts[0]['id'] }}").checked = true;
+        // Initialize the display with the first bank account
+        displayBank({{ $bankAccounts[0]['id'] }});
+    </script> --}}
 </body>
 </html>

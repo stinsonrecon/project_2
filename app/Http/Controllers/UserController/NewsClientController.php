@@ -10,6 +10,7 @@ use App\Models\FormType;
 use App\Models\News;
 use App\Models\NewsType;
 use App\Models\Unit;
+use App\Models\BankAccount;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -210,6 +211,8 @@ class NewsClientController extends Controller
 
         $current_time = Carbon::now(7);
 
+        $bankAccounts = BankAccount::all();
+
         $end_time = Carbon::now(7)->addDays(10);
 
         $idBanking = session()->get('news')['idBanking'];
@@ -217,7 +220,8 @@ class NewsClientController extends Controller
         return view('front-end.contents.estate.bankList', [
             'loai_tin' => $loai_tin,
             'current_time' => $current_time, 'end_time' => $end_time,
-            'idBanking' => $idBanking
+            'idBanking' => $idBanking,
+            'bankAccounts' => $bankAccounts
         ]);
     }
 
