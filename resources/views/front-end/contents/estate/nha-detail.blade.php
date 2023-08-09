@@ -1,4 +1,7 @@
 @extends('front-end.app')
+@section('title')
+<title>Tin đăng</title>
+@endsection
 @section('content')
 <div class="mt-20">
     @include('front-end.components.filter')
@@ -467,7 +470,8 @@
 
             <div class="pt-10 text-sm font-normal">
                 <div class="text-xl pb-5 font-bold">Xem trên bản đồ</div>
-                <div class="w-full h-60 bg-gray-100"></div>
+                {{-- <div class="w-full h-60 bg-gray-100"></div> --}}
+                <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d14903.544264547925!2d105.7703291!3d20.9570901!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1691593724802!5m2!1svi!2s" width="1000" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
 

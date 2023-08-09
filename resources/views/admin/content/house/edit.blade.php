@@ -1,7 +1,7 @@
 @extends('admin.app')
 
 @section('title')
-<title>Apartment/house</title>
+<title>Cập nhật thông tin nhà/chung cư</title>
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@
     @include('admin.components.header')
     <main>
         <div class="flex items-center justify-between px-4 py-4 border-b lg:py-6 dark:border-primary-darker">
-            <h1 class="text-2xl font-semibold">Apartment/house | Edit</h1>
+            <h1 class="text-2xl font-semibold">Quản lý nhà/chung cư | Cập nhật</h1>
         </div>
         <!-- Content -->
         <div>
@@ -19,7 +19,7 @@
                     <div>
                         <label class="block  text-sm font-bold mb-2" >
                             Thành phố
-                            <span class=" text-base">*</span>
+                            <span class="text-red-500  text-base">*</span>
                         </label>
                         <select name="city" id="city" class="border border-gray-300 rounded outline-none text-black py-2 px-2 w-full" required>
                             <option value="{{ $house->matp }}">{{ $house->city->name }}</option>
@@ -32,7 +32,7 @@
                     <div>
                         <label class="block  text-sm font-bold mb-2" >
                             Quận huyện
-                            <span class=" text-base">*</span>
+                            <span class="text-red-500  text-base">*</span>
                         </label>
                         <select name="district" id="district" class="border border-gray-300 rounded outline-none text-black py-2 px-2 w-full" required>
                             <option value="{{ $house->maqh }}">{{ $house->district->name }}</option>
@@ -55,7 +55,7 @@
                     <div>
                         <label class="block  text-sm font-bold mb-1" >
                             Tên đường
-                            <span class=" text-base">*</span>
+                            <span class="text-red-500  text-base">*</span>
                         </label>
                         <input class="border border-gray-300 rounded outline-none
                                      text-black py-2 px-3 w-full text-sm"
@@ -67,7 +67,7 @@
                 <div class="mb-6">
                     <label class="block  text-sm font-bold mb-2" >
                     Diên tích (m²)
-                    <span class=" text-base">*</span>
+                    <span class="text-red-500  text-base">*</span>
                     </label>
                     <input class="shadow appearance-none border rounded w-full py-2 px-3
                                   leading-tight focus:outline-none focus:shadow-outline text-dark"
@@ -78,7 +78,7 @@
                 <div class="mb-4">
                     <label class="block  text-sm font-bold mb-2" >
                         Mô tả
-                        <span class=" text-base">*</span>
+                        <span class="text-red-500  text-base">*</span>
                     </label>
                     <textarea class="shadow appearance-none border rounded w-full py-2 px-3
                             leading-tight focus:outline-none focus:shadow-outline text-dark"
@@ -310,16 +310,16 @@
                 </div>
 
                 @if ($house->linkImg != null)
-                    <div class="dark:text-primary-darker text-xl font-bold pb-10">
+                    <div class="dark:text-primary-darker text-xl font-bold">
                         @if (sizeof($house->linkImg) > 1)
                             <div class="splide relative flex flex-wrap justify-around w-full">
                                 <div class="splide__arrows hidden lg:block">
                                     <button type="button"
-                                        class="splide__arrow splide__arrow--prev text-xl hover:bg-primary-dark text-black dark:text-primary-dark hover:text-white bg-gray-300">
+                                        class="splide__arrow splide__arrow--prev text-xl hover:bg-primary-dark text-black dark:text-primary-dark hover:text-white">
                                         <i class="fas fa-caret-left"></i>
                                     </button>
                                     <button type="button"
-                                        class="splide__arrow splide__arrow--next text-xl hover:bg-primary-dark text-black dark:text-primary-dark hover:text-white bg-gray-300">
+                                        class="splide__arrow splide__arrow--next text-xl hover:bg-primary-dark text-black dark:text-primary-dark hover:text-white">
                                         <i class="fas fa-caret-right"></i>
                                     </button>
                                 </div>
@@ -327,20 +327,22 @@
                                     <ul class="splide__list">
                                         @foreach ($house->linkImg as $img)
                                             <li class="text-center splide__slide px-3">
-                                                <img class="" src="{{ asset('storage/file') . '/' . $img }}" alt="">
+                                                <img class="" src="{{ asset('storage/estate_images') . '/' . $house->news->idBanking . '/' . $img }}" alt="">
                                             </li>
                                         @endforeach
                                     </ul>
                                 </div>
                             </div>
                         @else
-                            <img class="" src="{{ asset('storage/file') . '/' . ($house->linkImg)[0] }}" alt="">
+                            <div class="flex justify-center items-center">
+                                <img class="" src="{{ asset('storage/estate_images') . '/' . $house->news->idBanking . '/' . ($house->linkImg)[0] }}" alt="">
+                            </div>
                         @endif
                     </div>
                 @endif
 
-                <div class="flex items-center justify-between">
-                    <button class=" border-2 font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline dark:hover:bg-primary-darker hover:bg-gray-300" type="submit">
+                <div class="flex items-center justify-between mt-10">
+                    <button class="btn focus:outline-none focus:shadow-outline" type="submit">
                         Cập nhật
                     </button>
                 </div>

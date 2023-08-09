@@ -1,4 +1,7 @@
 @extends('front-end.app')
+@section('title')
+<title>Nhà/chung cư</title>
+@endsection
 @section('content')
     <div class="mt-20">
         <div class="hidden xl:block">

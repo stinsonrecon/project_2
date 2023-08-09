@@ -1,4 +1,7 @@
 @extends('front-end.app')
+@section('title')
+<title>Đăng tin</title>
+@endsection
 @section('content')
 <div class="mt-20 flex">
     {{-- <form class="rounded px-8 pt-6 pb-8 mb-4 flex justify-between" method="POST"
@@ -42,7 +45,7 @@
                     <div class="mb-5">
                         <label class="block text-base font-bold mb-2 text-black" >
                             Thành phố
-                            <span class=" text-base">*</span>
+                            <span class="text-red-500  text-base">*</span>
                         </label>
                         <select name="city" id="city" class="border border-gray-300 rounded outline-none text-black py-2 px-2 w-full" required>
                             <option value="">Chọn thành phố</option>
@@ -55,7 +58,7 @@
                     <div class="mb-5">
                         <label class="block text-base font-bold mb-2 text-black" >
                             Quận huyện
-                            <span class=" text-base">*</span>
+                            <span class="text-red-500  text-base">*</span>
                         </label>
                         <select name="district" id="district" class="border border-gray-300 rounded outline-none text-black py-2 px-2 w-full" required>
                             <option value="">Chọn quận/huyện</option>
@@ -74,7 +77,7 @@
                     <div>
                         <label class="block  text-base font-bold mb-2 text-black" >
                             Tên đường
-                            <span class=" text-base">*</span>
+                            <span class="text-red-500  text-base">*</span>
                         </label>
                         <input class="border border-gray-300 rounded outline-none text-black py-2.5 px-3 w-full text-sm"
                         id="ten_duong" name="ten_duong" type="text" placeholder="Nhập tên đường" required>
@@ -92,7 +95,7 @@
                 <div class="mb-4">
                     <label class="block text-base font-bold mb-2 text-black" >
                         Tiêu đề
-                        <span class=" text-base">*</span>
+                        <span class="text-red-500  text-base">*</span>
                     </label>
                     <textarea name="title" id="title"
                             class="w-full border border-gray-300 rounded resize-none outline-none p-2 text-black mb-2" rows="2"
@@ -105,7 +108,7 @@
                 <div class="mb-6">
                     <label class="block text-base font-bold mb-2 text-black" >
                         Mô tả
-                        <span class=" text-base">*</span>
+                        <span class="text-red-500  text-base">*</span>
                     </label>
                     <textarea name="mo_ta" id="ckeditor"
                             class="w-full border border-gray-300 rounded resize-none outline-none p-2 text-black mb-2" rows="5"
@@ -127,7 +130,7 @@
                 <div class="mb-4">
                     <label class="block text-black text-sm font-bold mb-2" >
                     Diện tích (m²)
-                    <span class=" text-base">*</span>
+                    <span class="text-red-500  text-base">*</span>
                     </label>
                     <input class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline text-black"
                     id="dientich" name="dientich" type="number" min="1" placeholder="Nhập diện tích, VD 80,100" required>
@@ -140,7 +143,7 @@
                     <div class="col-span-2">
                         <label class="block  text-base font-bold mb-2 text-black" >
                             Mức giá
-                            <span class=" text-base">*</span>
+                            <span class="text-red-500  text-base">*</span>
                         </label>
                         <input class="border border-gray-300 rounded outline-none text-black py-2.5 px-3 w-full text-sm"
                             id="gia" name="gia" type="number" min="1" placeholder="Nhập mức giá, VD 12000000" required step="any">
@@ -149,7 +152,7 @@
                     <div>
                         <label class="block  text-base font-bold mb-2 text-black" >
                             Đơn vị
-                            <span class=" text-base">*</span>
+                            <span class="text-red-500  text-base">*</span>
                         </label>
                         <select name="don_vi" id="don_vi" class="border border-gray-300 rounded outline-none text-black py-2 px-2 w-full" required>
                             <option value="">Chọn đơn vị</option>

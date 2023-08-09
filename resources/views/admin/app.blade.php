@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="{{asset('css/tailwind.css')}}" />
     <link rel="stylesheet" href="{{ asset('css/backend/myStyle.css') }}">
     <link rel="stylesheet" href="{{ asset('css/splide.min.css') }}">
+    <link rel="icon" href="{{asset('images/favicon.ico')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/4ff8e07996.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/@themesberg/flowbite@1.3.0/dist/flowbite.min.css" />

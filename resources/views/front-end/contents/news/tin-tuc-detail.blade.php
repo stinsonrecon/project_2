@@ -1,4 +1,7 @@
 @extends('front-end.app')
+@section('title')
+<title>Bài viết</title>
+@endsection
 @section('content')
     <div class="mt-20">
         <img class="w-full" src="/images/front-end/bg-tin-tuc-detail.png" alt="">

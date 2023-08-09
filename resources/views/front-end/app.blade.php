@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{asset('images/favicon.ico')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}" type="image/x-icon">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="https://kit.fontawesome.com/732f1c5837.js" crossorigin="anonymous"></script>
     <script src="{{ asset('js/frontend/hidden.js') }}"></script>
@@ -25,8 +27,7 @@
 
     <script src="//cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
     <script src="{{ asset('js/product-slider.js') }}"></script>
-
-    <title>Document</title>
+    @yield('title')
 </head>
 <body>
     @include('front-end.components.header')

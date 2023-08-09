@@ -1,8 +1,11 @@
 @extends('front-end.app')
+@section('title')
+<title>Cấp lại mật khẩu</title>
+@endsection
 @section('content')
 <div class="mt-20 bg-gray-100">
     @include('front-end.components.banner-news')
-    
+
         <form action="" method="POST" role="form">
             @csrf
             <div class="grid justify-items-stretch p-2">
@@ -28,6 +31,6 @@
                 </div>
             </div>
         </form>
-   
+
 </div>
 @endsection

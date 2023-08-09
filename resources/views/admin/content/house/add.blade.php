@@ -1,7 +1,7 @@
 @extends('admin.app')
 
 @section('title')
-<title>Apartment/house</title>
+<title>Thêm mới nhà/chung cư</title>
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@
     @include('admin.components.header')
     <main>
         <div class="flex items-center justify-between px-4 py-4 border-b lg:py-6 dark:border-primary-darker">
-            <h1 class="text-2xl font-semibold">Apartment/house | Add</h1>
+            <h1 class="text-2xl font-semibold">Quản lý nhà/chung cư | Thêm mới</h1>
         </div>
         <!-- Content -->
         <div>
@@ -19,7 +19,7 @@
                     <div>
                         <label class="block  text-sm font-bold mb-2" >
                             Thành phố
-                            <span class=" text-base">*</span>
+                            <span class="text-red-500  text-base">*</span>
                         </label>
                         <select name="city" id="city" class="border border-gray-300 rounded outline-none text-black py-2 px-2 w-full" required>
                             <option value="">Chọn thành phố</option>
@@ -32,7 +32,7 @@
                     <div>
                         <label class="block  text-sm font-bold mb-2" >
                             Quận huyện
-                            <span class=" text-base">*</span>
+                            <span class="text-red-500  text-base">*</span>
                         </label>
                         <select name="district" id="district" class="border border-gray-300 rounded outline-none text-black py-2 px-2 w-full" required>
                             <option value="">Chọn quận/huyện</option>
@@ -51,7 +51,7 @@
                     <div>
                         <label class="block  text-sm font-bold mb-1" >
                             Tên đường
-                            <span class=" text-base">*</span>
+                            <span class="text-red-500  text-base">*</span>
                         </label>
                         <input class="border border-gray-300 rounded outline-none text-black py-2 px-3 w-full text-sm" id="ten_duong" name="ten_duong" type="text" placeholder="Nhập tên đường" required>
                     </div>
@@ -60,7 +60,7 @@
                 <div class="mb-4">
                     <label class="block  text-sm font-bold mb-2" >
                         Mô tả
-                        <span class=" text-base">*</span>
+                        <span class="text-red-500  text-base">*</span>
                     </label>
                     <textarea class="shadow appearance-none border rounded w-full py-2 px-3
                             leading-tight focus:outline-none focus:shadow-outline text-dark"
@@ -72,7 +72,7 @@
                 <div class="mb-6">
                     <label class="block  text-sm font-bold mb-2" >
                     Diên tích (m²)
-                    <span class=" text-base">*</span>
+                    <span class="text-red-500  text-base">*</span>
                     </label>
                     <input class="shadow appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline text-dark" id="dientich" name="dientich" type="number" min="1" placeholder="Nhập diện tích" required>
                 </div>
@@ -224,7 +224,7 @@
                 </div>
 
                 <div class="flex items-center justify-between">
-                    <button class=" border-2 font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline dark:hover:bg-primary-darker hover:bg-gray-300" type="submit">
+                    <button class="btn focus:outline-none focus:shadow-outline" type="submit">
                         Thêm mới
                     </button>
                 </div>

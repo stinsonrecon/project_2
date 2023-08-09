@@ -1,4 +1,7 @@
 @extends('front-end.app')
+@section('title')
+<title>Đăng nhập</title>
+@endsection
 @section('content')
 @if(session('status'))
     {{session('status')}}

@@ -1,4 +1,7 @@
 @extends('front-end.app')
+@section('title')
+<title>Thay đổi thông tin cá nhân</title>
+@endsection
 @section('content')
 
 <form method="POST" action="{{ route('account.info.update') }}" enctype="multipart/form-data">

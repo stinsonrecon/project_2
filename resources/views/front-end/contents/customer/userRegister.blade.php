@@ -1,4 +1,7 @@
 @extends('front-end.app')
+@section('title')
+<title>Đăng ký</title>
+@endsection
 @section('content')
 <form method="POST" action="{{ route('client.register.store') }}" enctype="multipart/form-data">
     @csrf

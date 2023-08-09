@@ -1,6 +1,10 @@
 {{-- header --}}
 <div class="h-20 w-full flex bg-white text-black border-b-2 border-red-600 z-20 top-0 fixed">
-    <div class="my-auto text-center w-11/12 lg:w-3/12 text-3xl text-orange-600 font-black"><a href="/">Logo</a></div>
+    <div class="my-auto text-center w-11/12 lg:w-3/12 text-3xl text-orange-600 font-black">
+        <a href="/" class="flex justify-center items-center">
+            <img src="{{ asset('images/logo.png') }}" alt="" class="h-14">
+        </a>
+    </div>
     <div class="hidden lg:block my-auto w-7/12 2xl:w-6/12">
         <ul class="flex font-medium justify-center">
             <li class="w-1/6 group relative text-center">

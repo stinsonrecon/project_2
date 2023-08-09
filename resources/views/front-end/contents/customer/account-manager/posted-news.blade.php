@@ -1,4 +1,7 @@
 @extends('front-end.app')
+@section('title')
+<title>Quản lý tin đăng</title>
+@endsection
 @section('content')
 <div class="mt-20 bg-gray-100">
     @include('front-end.components.banner-news')

@@ -1,7 +1,7 @@
 @extends('admin.app')
 
 @section('title')
-<title>Land</title>
+<title>Quản lý đất</title>
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@
     @include('admin.components.header')
     <main>
         <div class="flex items-center justify-between px-4 py-4 border-b lg:py-6 dark:border-primary-darker">
-            <h1 class="text-2xl font-semibold">Type of real estate: land</h1>
+            <h1 class="text-2xl font-semibold">Danh sách đất</h1>
         </div>
         <!-- Content -->
         <div class=" h-screen">
@@ -18,7 +18,7 @@
                     <div class="flex flex-row-reverse">
                         <div class="m-6">
                             <a href="{{route('admin.land.create')}}"
-                                class="font-bold py-2 px-4 border-2 rounded-lg hover:bg-white text-black focus:outline-none focus:shadow-outline"
+                                class="btn focus:outline-none focus:shadow-outline"
                                 type="button">
                                 Thêm bất động sản
                             </a>

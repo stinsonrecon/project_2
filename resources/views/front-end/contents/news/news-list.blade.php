@@ -1,4 +1,7 @@
 @extends('front-end.app')
+@section('title')
+<title>Tin tức</title>
+@endsection
 @section('content')
     <div class="mt-20">
         <div class="flex-col">

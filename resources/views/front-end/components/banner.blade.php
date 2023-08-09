@@ -1,5 +1,5 @@
 {{-- search --}}
-<div class="mt-20" style="background-image: url('{{ asset('images/front-end/home/bg.png')}}'); min-height: 500px">
+<div class="mt-20" style="background-image: url('{{ asset('images/front-end/home/bg.png')}}'); min-height: 500px; background-repeat: no-repeat; background-size: cover;">
     <div class="my-auto flex-col">
         <div class="text-white w-full pt-20 text-lg xl:text-2xl text-center">TÌM KIẾM NGÔI NHÀ CỦA RIÊNG BẠN</div>
         <div class="mt-10 w-11/12 lg:w-1/2 md:w-4/5 mx-auto rounded-md bg-black bg-opacity-50 text-white px-4 py-2">
@@ -35,7 +35,11 @@
                         <input type="submit" hidden="true">
                     </div>
                 </div>
-                <div class="w-1/12 sm:w-1/6 rounded-r-md bg-orange-600"></div>
+                <div class="w-1/12 sm:w-1/6 rounded-r-md bg-orange-600 flex justify-center items-center cursor-pointer">
+                    <div class=" cursor-pointer">
+                        Tìm kiếm
+                    </div>
+                </div>
             </div>
             <div class="w-full sm:w-11/12 flex py-4 justify-between">
                 <div class="w-1/3 sm:w-1/4 text-xs sm:text-sm mr-1 border rounded-md h-2/3 flex py-1 px-2 group relative">

@@ -1,4 +1,9 @@
 @extends('front-end.app')
+
+@section('title')
+<title>Trang chủ</title>
+@endsection
+
 @section('content')
     @include('front-end.components.banner')
     <div class="flex-col">

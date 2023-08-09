@@ -1,4 +1,7 @@
 @extends('front-end.app')
+@section('title')
+<title>Thanh toán</title>
+@endsection
 @section('content')
 <div class="flex-col xl:flex xl:flex-row mt-20 justify-between py-10" style="background-color: #E9E9E9;">
     {{-- Left side bar --}}

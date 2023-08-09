@@ -141,7 +141,7 @@
                     <button id="modal-btn" class="btn modal-btn" onclick="openModal()">Tìm kiếm nâng cao</button>
                 </li>
                 <li
-                    class="w-1/3 py-1 text-red-600 border border-red-600 bg-white rounded-md text-center hover:bg-orange-500">
+                    class="w-1/3 py-1 text-red-600 border border-red-600 bg-white rounded-md text-center hover:bg-orange-500 hover:text-white">
                     Tìm kiếm
                 </li>
             </ul>
@@ -202,7 +202,7 @@
                     </select>
                     <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                    </div>    
+                    </div>
                 </div>
             </div>
             <div class="flex w-full text-sm mt-5">
@@ -263,17 +263,17 @@
                     </div>
                 </div>
             </div>
-            <div class="mt-6 flex"> 
+            <div class="mt-6 flex">
                 <div class="w-1/3 py-1 mr-2 text-center border rounded-md hover:bg-red-500 hover:text-white">Mặt đường</div>
                 <div class="w-1/3 py-1 mr-2 ml-2 text-center border rounded-md hover:bg-red-500 hover:text-white">Có sân</div>
                 <div class="w-1/3 py-1 ml-2 text-center border rounded-md hover:bg-red-500 hover:text-white">Bể bơi</div>
             </div>
-            <div class="mt-3 flex"> 
+            <div class="mt-3 flex">
                 <div class="w-1/3 py-1 mr-2 text-center border rounded-md hover:bg-red-500 hover:text-white">Trong ngõ</div>
                 <div class="w-1/3 py-1 mr-2 ml-2 text-center border rounded-md hover:bg-red-500 hover:text-white">Ban công</div>
                 <div class="w-1/3 py-1 ml-2 text-center border rounded-md hover:bg-red-500 hover:text-white">Gần trường học</div>
             </div>
-            <div class="mt-3 flex"> 
+            <div class="mt-3 flex">
                 <div class="w-1/3 py-1 mr-2 text-center border rounded-md hover:bg-red-500 hover:text-white">Nội thành</div>
                 <div class="w-1/3 py-1 mr-2 ml-2 text-center border rounded-md hover:bg-red-500 hover:text-white">Ngoại thành</div>
                 <div class="w-1/3 py-1 ml-2 text-center border rounded-md hover:bg-red-500 hover:text-white">An ninh</div>

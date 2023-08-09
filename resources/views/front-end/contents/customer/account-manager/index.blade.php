@@ -1,4 +1,7 @@
 @extends('front-end.app')
+@section('title')
+<title>Thông tin cá nhân</title>
+@endsection
 @section('content')
 
 <form method="POST" action="{{ route('account.index') }}" enctype="multipart/form-data">
@@ -27,7 +30,7 @@
                     <div class="md:flex mx-3">
                         <div class="md:w-1/4 lg:ml-12 mt-8 font-bold">Họ và tên</div>
                         <div class="md:w-2/3 md:pr-8 lg:pr-16">
-                            <input class="w-full pl-4 md:mt-8 text-black text-sm outline-none border border-1 py-2 pl-2 rounded" type="text" 
+                            <input class="w-full pl-4 md:mt-8 text-black text-sm outline-none border border-1 py-2 pl-2 rounded" type="text"
                             id="full_name" name="full_name"
                             value="{{ Auth::user()->full_name }}" readonly>
                         </div>
@@ -35,7 +38,7 @@
                     <div class="md:flex mx-3">
                         <div class="md:w-1/4 lg:ml-12 mt-3 sm:mt-8 font-bold">Địa chỉ Email</div>
                         <div class="md:w-2/3 md:pr-16">
-                            <input class="w-full pl-4 md:mt-4 text-black text-sm outline-none border border-1 py-2 pl-2 rounded" type="text" 
+                            <input class="w-full pl-4 md:mt-4 text-black text-sm outline-none border border-1 py-2 pl-2 rounded" type="text"
                             id="email" name="email" type="email"
                             value="{{ $customer->email }}" readonly>
                         </div>
@@ -80,7 +83,7 @@
                         <div class="md:flex mx-3">
                             <div class="md:w-1/4 lg:ml-12 mt-2 md:mt-8 font-bold">Số điện thoại</div>
                             <div class="md:w-3/4 sm:w-2/3 md:pr-16">
-                                <input class="w-full md:mt-4 text-black text-sm outline-none border border-1 py-2 pl-2 rounded" 
+                                <input class="w-full md:mt-4 text-black text-sm outline-none border border-1 py-2 pl-2 rounded"
                                 id="phone_number" name="phone_number" type="number" minlength="10" maxlength="11"
                                 value="{{ $customer->phone_number }}" readonly>
                             </div>
@@ -88,8 +91,8 @@
                         <div class="md:flex mx-3">
                             <div class="md:w-1/4 lg:ml-12 mt-2 md:mt-8 font-bold">Ngày sinh</div>
                             <div class="md:w-3/4 sm:w-2/3 md:pr-16">
-                                <input class="w-full md:mt-4 text-black text-sm outline-none border border-1 py-2 pl-2 rounded" 
-                                id="DoB" name="DoB" 
+                                <input class="w-full md:mt-4 text-black text-sm outline-none border border-1 py-2 pl-2 rounded"
+                                id="DoB" name="DoB"
                                 value="{{ $customer->DoB }}" readonly
                                 type="date">
                             </div>
@@ -97,7 +100,7 @@
                         <div class="md:flex mx-3">
                             <div class="md:w-1/4 lg:ml-12 mt-2 md:mt-8 font-bold">Địa chỉ</div>
                             <div class="md:w-3/4 sm:w-2/3 md:pr-16">
-                                <input class="w-full md:mt-4 text-black text-sm outline-none border border-1 py-2 pl-2 rounded" 
+                                <input class="w-full md:mt-4 text-black text-sm outline-none border border-1 py-2 pl-2 rounded"
                                 id="phone_number" name="phone_number" type="text"
                                 value="{{ Auth::user()->address }}" readonly>
                             </div>
@@ -105,7 +108,7 @@
                         <div class="md:flex mb-4 mx-3 md:mb-16">
                             <div class="md:w-1/4 lg:ml-12 mt-2 md:mt-8 font-bold">CCCD</div>
                             <div class="md:w-3/4 sm:w-2/3 md:pr-16">
-                                <input class="w-full md:mt-4 text-black text-sm outline-none border border-1 py-2 pl-2 rounded" 
+                                <input class="w-full md:mt-4 text-black text-sm outline-none border border-1 py-2 pl-2 rounded"
                                 id="phone_number" name="phone_number" type="number"
                                 value="{{ $customer->SSN }}" readonly>
                             </div>
